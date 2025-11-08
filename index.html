@@ -10,31 +10,41 @@
   <div class="wrap">
     <h1>Weather</h1>
 
-    <form id="search">
+    <form id="search" class="row">
       <input id="q" placeholder="Search city (e.g. Berlin)" />
       <button>Search</button>
       <button type="button" id="loc">Use my location</button>
+      <button type="button" id="unit">Unit: °C</button>
     </form>
 
     <div id="status" class="status"></div>
 
     <div id="card" class="card hidden">
-      <div class="row">
-        <div>
+      <div class="row head">
+        <div class="place">
           <h2 id="place">—</h2>
-          <div id="desc">—</div>
+          <div class="desc">
+            <span id="icon" class="wxicon">•</span>
+            <span id="desc">—</span>
+          </div>
         </div>
         <div class="temp">
-          <span id="temp">--</span>°C
-          <small>feels <span id="feels">--</span>°C</small>
+          <span id="temp">--</span>°
+          <small>feels <span id="feels">--</span>°</small>
         </div>
       </div>
 
       <div class="row meta">
-        <div>Wind: <span id="wind">--</span> km/h</div>
+        <div>Wind: <span id="wind">--</span> <span id="windUnit">km/h</span></div>
         <div>Humidity: <span id="humid">--</span>%</div>
       </div>
 
+      <h3 class="sub">Next 24 hours</h3>
+      <div class="chart-wrap">
+        <canvas id="chart" width="740" height="220"></canvas>
+      </div>
+
+      <h3 class="sub">3-day forecast</h3>
       <div id="daily" class="daily"></div>
     </div>
   </div>

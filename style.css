@@ -1,20 +1,36 @@
-*{box-sizing:border-box} body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui,-apple-system,sans-serif;display:grid;place-items:center;min-height:100vh}
+*{box-sizing:border-box}
+body{
+  margin:0;background:#0f172a;color:#e2e8f0;
+  font-family:system-ui,-apple-system,sans-serif;
+  display:grid;place-items:center;min-height:100vh
+}
 .wrap{width:min(780px,92vw);padding:20px}
 h1{margin:0 0 12px}
-form{display:flex;gap:8px;margin-bottom:12px}
+.row{display:flex;gap:8px;align-items:center}
+form.row{margin-bottom:12px}
 input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e2e8f0}
 button{padding:12px 14px;border-radius:10px;border:0;background:#334155;color:#fff;cursor:pointer}
 button:hover{opacity:.9}
 .status{min-height:20px;color:#94a3b8;margin-bottom:10px}
 .card{background:#111827;border:1px solid #334155;border-radius:12px;padding:16px}
 .hidden{display:none}
-.row{display:flex;justify-content:space-between;gap:12px;align-items:center}
-.temp{font-size:54px;line-height:1}
+.head{justify-content:space-between;align-items:flex-start}
+.place h2{margin:0}
+.desc{display:flex;align-items:center;gap:8px;color:#cbd5e1;margin-top:4px}
+.wxicon{font-size:28px;line-height:1}
+.temp{font-size:56px;line-height:1}
 .temp small{display:block;font-size:14px;color:#94a3b8}
-.meta{margin-top:8px;color:#cbd5e1}
-.daily{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.meta{margin-top:8px;color:#cbd5e1;justify-content:space-between}
+.sub{margin:14px 0 8px;font-size:16px;color:#cbd5e1}
+.chart-wrap{background:#0b1220;border:1px solid #334155;border-radius:10px;padding:10px;overflow:hidden}
+.daily{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
 .day{background:#0b1220;border:1px solid #334155;border-radius:10px;padding:10px;text-align:center}
+.day .ico{font-size:22px;margin-bottom:4px;display:block}
 .day .t{font-size:18px}
 .bad{color:#ef4444}
 .ok{color:#10b981}
-@media (max-width:520px){.row{flex-direction:column;align-items:flex-start}.temp{font-size:42px}}
+@media (max-width:520px){
+  .head{flex-direction:column;gap:12px}
+  .temp{font-size:44px}
+  .chart-wrap{padding:8px}
+}
